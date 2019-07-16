@@ -13,7 +13,7 @@ open class PMTabBarController: UITabBarController{
     
     //MARK:- Properties
     fileprivate var willSelectTheTabBarItem = true
-    fileprivate var barHeight_: CGFloat = 74.0
+    fileprivate var barHeight_: CGFloat = 84.0
     
     //MARK:- View presentation
     open override func viewDidLoad() {
@@ -41,12 +41,12 @@ open class PMTabBarController: UITabBarController{
     //MARK:- Computed Properties
     open var barHeight: CGFloat{
         get{
-            if #available(iOS 11.0, *) {
-                return barHeight_ + view.safeAreaInsets.bottom
-            } else {
+//            if #available(iOS 11.0, *) {
+//                return barHeight_
+//            } else {
                 // Fallback on earlier versions
                 return barHeight_
-            }
+//            }
         }set{
             barHeight_ = newValue
             updateTabFrame()
